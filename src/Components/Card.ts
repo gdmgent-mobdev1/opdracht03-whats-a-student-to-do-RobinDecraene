@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { v4 as uuidv4 } from 'uuid';
-import { root, State } from '../Lib';
+import { root, State } from '../lib';
 import { dragstartHandler } from '../Lib/dragAndDrop';
 import Comment from './Comment';
 import EditableText from './EditebleText';
@@ -8,35 +8,20 @@ import TodoList from './TodoList';
 
 export default class Card {
   place: HTMLElement;
-
   todoList: TodoList;
-
   state: State;
-
   menuContainer?: HTMLElement;
-
   card?: HTMLDivElement ;
-
   deleteButton?: HTMLButtonElement ;
-
   p?: HTMLParagraphElement ;
-
   menu?: HTMLDivElement ;
-
   menuTitle?: HTMLDivElement ;
-
   menuDescription?: HTMLDivElement ;
-
   commentsInput?: HTMLInputElement ;
-
   commentsButton?: HTMLButtonElement ;
-
   menuComments?: HTMLDivElement ;
-
   editableDescription?: EditableText ;
-
   editableTitle?: EditableText;
-
   id: string;
 
   constructor(text: string, place: HTMLElement, todoList: TodoList) {
