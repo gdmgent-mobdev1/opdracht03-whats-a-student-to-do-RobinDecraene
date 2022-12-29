@@ -1,0 +1,22 @@
+.todoList h2 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.menuTitle {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.menuDescription {
+  margin-bottom: 2em;
+  line-height: 1.5em;
+}
+
+.menuDescription textarea {
+  width: 100%;
+  height: 5em;
+  padding: 0.5em;
+  font-size: 1.1em;
+}

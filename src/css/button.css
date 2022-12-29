@@ -1,0 +1,42 @@
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+#addTodoListDiv button {
+  margin-left: 0.5em;
+}
+
+#to-do-list-button {
+  margin-left: 0.5em;
+}
+
+.card button {
+  visibility: hidden;
+  height: max-content;
+
+  background: none;
+  border: none;
+  padding: 0.3em;
+
+}
+
+.card:hover button {
+  visibility: visible;
+}
+
+.card button:hover {
+  background-color: rgb(235, 235, 235);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #5aac44;
+  color: white;
+  border: none;
+  border-radius: 4px;
+
+  padding: 0.5em;
+  margin-top: 0.5em;
+}

@@ -108,7 +108,7 @@ export class FireBase {
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential ? .accessToken;
+        const token = credential ?.accessToken;
         // The signed-in user info.
         this.user = result.user;
         cb();
@@ -142,43 +142,43 @@ export class FireBase {
   }
 
   // get data from firestore
-  export const fireStoreDb = getFirestore(this.firebaseApp);
-  export const addTodoFirebase = async (text: string, todoId: string) => {
-    const cardsSnapShot = collection(this.fireStoreDb, `lists/${todoId}/cards`);
+//   export const fireStoreDb = getFirestore(this.firebaseApp);
+//   export const addTodoFirebase = async (text: string, todoId: string) => {
+//     const cardsSnapShot = collection(this.fireStoreDb, `lists/${todoId}/cards`);
 
-    const docRef = await addDoc(cardsSnapShot, {
-      title: text,
-      description: '',
-      comments: []
-    });
-    return docRef.id;
-  }
+//     const docRef = await addDoc(cardsSnapShot, {
+//       title: text,
+//       description: '',
+//       comments: []
+//     });
+//     return docRef.id;
+//   }
 
-  export const updateTodoFirebase = async (todoListId: string, id: string, attribute: string, value: string) => {
-    console.log(todoListId, id, attribute, value);
-    if (attribute === 'title') {
-      const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
-        title: value
-      }, {
-        merge: true
-      });
-    } else {
-      const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
-        description: value
-      }, {
-        merge: true
-      });
-    }
+//   export const updateTodoFirebase = async (todoListId: string, id: string, attribute: string, value: string) => {
+//     console.log(todoListId, id, attribute, value);
+//     if (attribute === 'title') {
+//       const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
+//         title: value
+//       }, {
+//         merge: true
+//       });
+//     } else {
+//       const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
+//         description: value
+//       }, {
+//         merge: true
+//       });
+//     }
 
-  }
+//   }
 
 
-  export const deleteTodoListFirebase = async (id: string) => {
-    await deleteDoc(doc(this.fireStoreDb, "lists", id));
-  }
+//   export const deleteTodoListFirebase = async (id: string) => {
+//     await deleteDoc(doc(this.fireStoreDb, "lists", id));
+//   }
 
-  export const deleteCardFromFirebase = async (todoListId: string, id: string) => {
-    await deleteDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id));
-  }
+//   export const deleteCardFromFirebase = async (todoListId: string, id: string) => {
+//     await deleteDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id));
+//   }
 
 }
