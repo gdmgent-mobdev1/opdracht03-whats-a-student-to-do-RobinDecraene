@@ -6,7 +6,7 @@ import { TodoList } from './Components';
 
 import { FireBase } from "./lib/Firebase";
 import { LoginScherm } from "./lib/LoginScherm";
-import { SigninScherm } from "./lib/SigninScherm";
+import { SignupScherm } from "./lib/SignupScherm";
 import { LogoutScherm } from "./lib/LogoutScherm";
 import { root } from './lib';
 // import localstorage from './Lib/localStorage';
@@ -18,7 +18,7 @@ export class MyApp {
   public editableText! : EditableText;
   public firebase! : FireBase;
   public loginScherm! : LoginScherm;
-  public siginScherm! : SigninScherm;
+  public siginScherm! : SignupScherm;
   public logoutScherm! : LogoutScherm;
 
   constructor() {

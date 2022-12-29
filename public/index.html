@@ -13,37 +13,70 @@
         <button id="addTodoListButton" class="btn-save">Add list</button>
     </div>
 
-
     <div id="app">
-      <div id="startScherm">
-        <button>Log in</button>
-        <button>sign up</button>
+       <!-- login-sign up scherm -->
+    <div id="login-signup">
+      <h1>Notes</h1>
+      <button id="loginBtn" class="premiereBtn">Log in</button>
+      <button id="signupBtn" class="premiereBtn">Sign up</button>
+    </div>
 
+    <!-- login scherm -->
+    <div id="login" class="verstopt">
+      <img src="../icons/medium_Icon.svg">
+      <h1>Chatroom</h1>
+      <div class="inputveld">
+        <label>email</label>
+        <input id="emailLogin" type="email">
       </div>
 
-      <div id="loginScherm" class="verstopt">
-        <label for="email">Email</label>
-        <input type="email" name="email">
-        <label for="password"></label>
-        <input type="password" name="password">
-        <button>Of met google</button>
-
-        <button>Log in</button>
+      <div class="inputveld">
+        <label>passwoord</label>
+        <input id="passwordLogin" type="password">
       </div>
 
-      <div id="signupScherm" class="verstopt">
-        <label for="naam">Naam</label>
-        <input type="text" name="naam">
-        <label for="voornaam">Voornaam</label>
-        <input type="text" name="voornaam">
-        <label for="email">Email</label>
-        <input type="email" name="email">
-        <label for="password"></label>
-        <input type="password" name="password">
-        <button>Of met google</button>
-
-        <button>Sign up</button>
+      <p>or</p>
+      <button id="googleLogin" class="secondaireBtn">Via Google</button>
+      <button id="loginChatBtn" class="premiereBtn">log in</button>
+      <div class="noAccount">
+        <p>Dont have an account?</p>
+        <button id="accountSignup" class="tertaireBtn">Sign up</button>
       </div>
+
+    </div>
+
+    <!-- sign up scherm -->
+    <div id="signup" class="verstopt">
+      <h1>Notes</h1>
+      <div class="inputveld">
+        <label>Name</label>
+        <input id="nameSignup" type="text">
+      </div>
+
+      <div class="inputveld">
+        <label>Last name</label>
+        <input id="lastNameSignup" type="text">
+      </div>
+
+      <div class="inputveld">
+        <label>email</label>
+        <input id="emailSignup" type="email">
+      </div>
+
+      <div class="inputveld">
+        <label>passwoord</label>
+        <input id="passwordsignup" type="password">
+      </div>
+
+      <p>or</p>
+      <button id="googleSignup" class="secondaireBtn">Via Google</button>
+      <button id="signupChatBtn" class="premiereBtn">Sign up</button>
+      <div class="allreadyAccount">
+        <p>allready have an account?</p>
+        <button id="accountLogin" class="tertaireBtn">Log in</button>
+      </div>
+    </div>
+
 
       <div id="agenda" class="verstopt">
 
