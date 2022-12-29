@@ -1,9 +1,38 @@
-button {
-  outline: none;
-  cursor: pointer;
+ .premiereBtn {
+  background-color: var(--LightPurple);
+  color: var(--White);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+  border: none;
+ }
+
+ .secondaireBtn {
+  background-color: var(--White);
+  color: var(--LightPurple);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+  border: .0625rem solid var(--LightPurple);
+ }
+
+ .premiereBtn, .secondaireBtn :active {
+  transform: translateY(4px);
+  padding: 0.5rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
 }
 
-#addTodoListDiv button {
+
+/* Gekregen css */
+
+/* #addTodoListDiv button {
   margin-left: 0.5em;
 }
 
@@ -39,4 +68,4 @@ button {
 
   padding: 0.5em;
   margin-top: 0.5em;
-}
+} */
