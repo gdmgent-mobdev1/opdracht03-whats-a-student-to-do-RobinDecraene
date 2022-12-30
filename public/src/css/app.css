@@ -11,6 +11,28 @@
 body {
   background-color: var(--White);
   font-family: "Open Sans", sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+#login-signup, #login, #signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  height: 100vh;
+}
+
+#account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+#account button {
+  margin-top: 3rem;
 }
 
 /* gekregen css */

@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cards</title>
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
   </head>
   <body>
     <div id="addTodoListDiv" class="verstopt">
@@ -15,7 +15,7 @@
 
     <div id="app">
        <!-- login-sign up scherm -->
-    <div id="login-signup">
+    <div id="login-signup" class="verstopt">
       <h1>Notes</h1>
       <button id="loginBtn" class="premiereBtn">Log in</button>
       <button id="signupBtn" class="premiereBtn">Sign up</button>
@@ -23,8 +23,7 @@
 
     <!-- login scherm -->
     <div id="login" class="verstopt">
-      <img src="../icons/medium_Icon.svg">
-      <h1>Chatroom</h1>
+      <h1>Notes</h1>
       <div class="inputveld">
         <label>email</label>
         <input id="emailLogin" type="email">
@@ -83,14 +82,12 @@
       </div>
 
     <!-- account scherm -->
-    <div id="account" class="verstopt">
+    <div id="account">
       <nav>
-        <img id="arrowAccount" src="/icons/arrow.png">
         <div class="accountTitle">
           <h2>Mijn account</h2>
         </div>
       </nav>
-      <img src="/icons/account.png">
       <h3 id="logged-in-user-name">Naam</h3>
       <div class="info">
         <p>Info</p>
@@ -105,6 +102,6 @@
 
 
     </div>
-    <script type="module" src="/src/app.ts"></script>
+    <script type="module" src="./src/app.ts"></script>
   </body>
 </html>
