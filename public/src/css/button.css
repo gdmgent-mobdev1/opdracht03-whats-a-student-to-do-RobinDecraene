@@ -1,5 +1,5 @@
  .premiereBtn {
-  background-color: var(--DarkPurple);
+  background-color: var(--Purple);
   color: var(--White);
   border-radius: 1rem;
   padding: 0.5rem;
@@ -12,14 +12,14 @@
 
  .secondaireBtn {
   background-color: var(--White);
-  color: var(--DarkPurple);
+  color: var(--Purple);
   border-radius: 1rem;
   padding: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 1rem;
   transition: 0.3s;
-  border: .0625rem solid var(--DarkPurple);
+  border: .0625rem solid var(--Purple);
  }
 
  .premiereBtn, .secondaireBtn:active {
@@ -30,7 +30,7 @@
 }
 
 .tertaireBtn {
-  color: var(--DarkPurple);
+  color: var(--Purple);
   background-color: var(--White);
   border: none;
   font-size: 1rem;

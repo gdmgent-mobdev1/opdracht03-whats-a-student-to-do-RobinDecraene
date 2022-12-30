@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cards</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-  </head>
-  <body>
-    <div id="addTodoListDiv" class="verstopt">
-        <input type="text" id="addTodoListInput" class="comment">
-        <button id="addTodoListButton" class="btn-save">Add list</button>
-    </div>
 
-    <div id="app">
-       <!-- login-sign up scherm -->
-    <div id="login-signup" class="verstopt">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <div id="addTodoListDiv" class="verstopt">
+    <input type="text" id="addTodoListInput" class="comment">
+    <button id="addTodoListButton" class="btn-save">Add list</button>
+  </div>
+
+  <div id="app">
+    <!-- login-sign up scherm -->
+    <div id="login-signup">
       <h1>Notes</h1>
+
       <button id="loginBtn" class="premiereBtn">Log in</button>
       <button id="signupBtn" class="premiereBtn">Sign up</button>
     </div>
@@ -77,15 +80,15 @@
     </div>
 
 
-      <div id="agenda" class="verstopt">
+    <div id="agenda" class="verstopt">
 
-      </div>
+    </div>
 
     <!-- account scherm -->
-    <div id="account">
+    <div id="account" class="verstopt">
       <nav>
         <div class="accountTitle">
-          <h2>Mijn account</h2>
+          <h2>My account</h2>
         </div>
       </nav>
       <h3 id="logged-in-user-name">Naam</h3>
@@ -101,7 +104,8 @@
     </div>
 
 
-    </div>
-    <script type="module" src="./src/app.ts"></script>
-  </body>
+  </div>
+  <script type="module" src="./src/app.ts"></script>
+</body>
+
 </html>

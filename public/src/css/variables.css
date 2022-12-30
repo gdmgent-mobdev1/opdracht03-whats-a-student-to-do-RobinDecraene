@@ -1,6 +1,11 @@
 body {
-  --DarkPurple: #7C73E6;
-  --LightPurple: #C4C1E0;
-  --Pink : #FEEAE3;
-  --White : #FAFAFA;
+  --DarkPurple: #362b6e;
+  --MediumPurple: #584d96;
+  --Purple: #9a7bd8;
+  --LightPurple: #dcc4ea;
+  --Green: #b0babe;
+
+  --White: #FAFAFA;
+
+
 }

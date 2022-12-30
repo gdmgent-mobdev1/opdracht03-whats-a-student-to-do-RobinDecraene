@@ -24,6 +24,7 @@ body {
   height: 100vh;
 }
 
+/* account scherm */
 #account {
   display: flex;
   flex-direction: column;
@@ -33,6 +34,17 @@ body {
 
 #account button {
   margin-top: 3rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.info p {
+  padding-bottom: 0.2rem;
 }
 
 /* gekregen css */
