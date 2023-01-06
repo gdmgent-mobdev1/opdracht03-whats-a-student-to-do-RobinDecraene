@@ -16,10 +16,10 @@ export class SignupScherm extends Scherm {
         this.signupChatBtn = document.getElementById("signupChatBtn") as HTMLElement;
         this.accoutnLogin = document.getElementById("accountLogin") as HTMLElement;
         this.googleLogin = document.getElementById('googleSignup') as HTMLElement;
-        this.nameSignup = document.getElementById('nameSignup') as HTMLElement;
-        this.lastNameSignup = document.getElementById('lastNameSignup') as HTMLElement;
-        this.emailSignup = document.getElementById('emailSignup') as HTMLElement;
-        this.passwordsignup = document.getElementById('passwordsignup') as HTMLElement;
+        this.nameSignup = document.getElementById('nameSignup') as HTMLInputElement;
+        this.lastNameSignup = document.getElementById('lastNameSignup') as HTMLInputElement;
+        this.emailSignup = document.getElementById('emailSignup') as HTMLInputElement;
+        this.passwordsignup = document.getElementById('passwordsignup') as HTMLInputElement;
     }   
 
     public init(){

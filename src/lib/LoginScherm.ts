@@ -14,8 +14,8 @@ export class LoginScherm extends Scherm {
         this.loginChatBtn = document.getElementById("loginChatBtn") as HTMLElement;
         this.accountSignup = document.getElementById("accountSignup") as HTMLElement;
         this.googleLogin = document.getElementById("googleLogin") as HTMLElement;
-        this.emailLogin = document.getElementById("emailLogin") as HTMLElement;
-        this.passwordLogin = document.getElementById("passwordLogin") as HTMLElement;
+        this.emailLogin = document.getElementById("emailLogin") as HTMLInputElement;
+        this.passwordLogin = document.getElementById("passwordLogin") as HTMLInputElement;
     }
 
     public init(){

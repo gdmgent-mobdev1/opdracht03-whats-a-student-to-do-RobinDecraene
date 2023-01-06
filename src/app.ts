@@ -8,7 +8,7 @@ import { FireBase } from "./lib/Firebase";
 import { LoginScherm } from "./lib/LoginScherm";
 import { SignupScherm } from "./lib/SignupScherm";
 import { LogoutScherm } from "./lib/LogoutScherm";
-import { root } from './lib';
+//import { root } from './lib';
 // import localstorage from './Lib/localStorage';
 // -------------main------------
 

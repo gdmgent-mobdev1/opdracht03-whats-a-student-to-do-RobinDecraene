@@ -1,17 +1,11 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist",
     "site": "opdracht03-whatsastudenttodo",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/public/index.html"
-      }
     ]
   }
 }

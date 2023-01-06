@@ -1,6 +1,6 @@
 const root = document.getElementById('app') as HTMLElement;
 interface State {
-  innerText: string;
+  innerText?: string;
   text: string
   description: string
   comments?: string[]

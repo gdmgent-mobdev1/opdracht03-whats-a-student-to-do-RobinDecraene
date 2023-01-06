@@ -9,7 +9,8 @@ import {
   deleteDoc,
   collection,
   addDoc,
-  setDoc
+  setDoc,
+  Firestore
 } from "firebase/firestore";
 import {
   Auth,
@@ -20,26 +21,23 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   User,
-  Unsubscribe,
+  
   signOut
 } from "firebase/auth";
 
 import {
   getDatabase,
-  ref,
-  set,
-  onValue,
-  Database,
-  DatabaseReference
+  Database
 } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 export class FireBase {
   private firebaseApp: FirebaseApp;
+  private fireStoreDb: Firestore;
   private auth: Auth;
   private provider: GoogleAuthProvider;
-  private database: Database;
+  //private database: Database;
   public user: User | undefined;
 
   private static service: FireBase | undefined;
@@ -64,7 +62,8 @@ export class FireBase {
     this.firebaseApp = initializeApp(firebaseConfig);
     this.auth = getAuth(this.firebaseApp);
     this.provider = new GoogleAuthProvider();
-    this.database = getDatabase(this.firebaseApp);
+    //this.database = getDatabase(this.firebaseApp);
+    this.fireStoreDb = getFirestore(this.firebaseApp);
 
   }
 
@@ -77,15 +76,12 @@ export class FireBase {
           displayName: naam + ' ' + achternaam
         }).then(function () {
           // Update successful.
-        }, function (error) {
-          // An error happened.
         });
         cb();
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error);
       });
   }
 
@@ -98,8 +94,7 @@ export class FireBase {
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error);
       });
   }
 
@@ -107,20 +102,19 @@ export class FireBase {
     signInWithPopup(this.auth, this.provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential ?.accessToken;
+       // const credential = GoogleAuthProvider.credentialFromResult(result);
+        //const token = credential?.accessToken;
         // The signed-in user info.
         this.user = result.user;
         cb();
         // ...
       }).catch((error) => {
         // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
+          console.log(error);
         // The email of the user's account used.
-        const email = error.customData.email;
+        //const email = error.customData.email;
         // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        //const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
   }
@@ -142,43 +136,45 @@ export class FireBase {
   }
 
   // get data from firestore
-//   export const fireStoreDb = getFirestore(this.firebaseApp);
-//   export const addTodoFirebase = async (text: string, todoId: string) => {
-//     const cardsSnapShot = collection(this.fireStoreDb, `lists/${todoId}/cards`);
+  public addTodoFirebase = async (text: string, todoId: string) => {
+    const cardsSnapShot = collection(this.fireStoreDb, `lists/${todoId}/cards`);
 
-//     const docRef = await addDoc(cardsSnapShot, {
-//       title: text,
-//       description: '',
-//       comments: []
-//     });
-//     return docRef.id;
-//   }
+    const docRef = await addDoc(cardsSnapShot, {
+      title: text,
+      description: '',
+      comments: []
+    });
+    return docRef.id;
+  }
 
-//   export const updateTodoFirebase = async (todoListId: string, id: string, attribute: string, value: string) => {
-//     console.log(todoListId, id, attribute, value);
-//     if (attribute === 'title') {
-//       const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
-//         title: value
-//       }, {
-//         merge: true
-//       });
-//     } else {
-//       const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
-//         description: value
-//       }, {
-//         merge: true
-//       });
-//     }
+  public updateTodoFirebase = async (todoListId: string, id: string, attribute: string, value: string) => {
+    console.log(todoListId, id, attribute, value);
+    if (attribute === 'title') {
+      const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
+        title: value
+      }, {
+        merge: true
+      });
+      
+      console.log(answer);
+    } else {
+      const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {
+        description: value
+      }, {
+        merge: true
+      });
+      console.log(answer);
+    }
 
-//   }
+  }
 
 
-//   export const deleteTodoListFirebase = async (id: string) => {
-//     await deleteDoc(doc(this.fireStoreDb, "lists", id));
-//   }
+  public deleteTodoListFirebase = async (id: string) => {
+    await deleteDoc(doc(this.fireStoreDb, "lists", id));
+  }
 
-//   export const deleteCardFromFirebase = async (todoListId: string, id: string) => {
-//     await deleteDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id));
-//   }
+  public deleteCardFromFirebase = async (todoListId: string, id: string) => {
+    await deleteDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id));
+  }
 
 }
