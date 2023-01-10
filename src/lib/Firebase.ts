@@ -21,7 +21,6 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   User,
-  
   signOut
 } from "firebase/auth";
 
