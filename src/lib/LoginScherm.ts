@@ -3,17 +3,17 @@ import { FireBase } from "./firebase";
 import { Scherm } from "./scherm";
 
 export class LoginScherm extends Scherm {
-    private loginChatBtn: HTMLElement;
-    private accountSignup: HTMLElement;
-    private googleLogin: HTMLElement;
-    private emailLogin;
-    private passwordLogin;
+    private loginChatBtn: HTMLButtonElement;
+    private accountSignup: HTMLButtonElement;
+    private googleLogin: HTMLButtonElement;
+    private emailLogin: HTMLInputElement;
+    private passwordLogin: HTMLInputElement;
 
     constructor(app: MyApp) {
         super("login", app);
-        this.loginChatBtn = document.getElementById("loginChatBtn") as HTMLElement;
-        this.accountSignup = document.getElementById("accountSignup") as HTMLElement;
-        this.googleLogin = document.getElementById("googleLogin") as HTMLElement;
+        this.loginChatBtn = document.getElementById("loginChatBtn") as HTMLButtonElement;
+        this.accountSignup = document.getElementById("accountSignup") as HTMLButtonElement;
+        this.googleLogin = document.getElementById("googleLogin") as HTMLButtonElement;
         this.emailLogin = document.getElementById("emailLogin") as HTMLInputElement;
         this.passwordLogin = document.getElementById("passwordLogin") as HTMLInputElement;
     }
@@ -32,7 +32,7 @@ export class LoginScherm extends Scherm {
 
         this.accountSignup.onclick = () => {
             this.hide();
-            this.app.siginScherm.show();
+            this.app.signupScherm.show();
         }
 
         this.googleLogin.onclick = () => {

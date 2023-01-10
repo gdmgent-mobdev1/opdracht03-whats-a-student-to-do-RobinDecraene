@@ -3,19 +3,19 @@ import { FireBase } from "./firebase";
 import { Scherm } from "./scherm";
 
 export class SignupScherm extends Scherm {
-    private signupChatBtn: HTMLElement;
-    private accoutnLogin: HTMLElement;
-    private googleLogin: HTMLElement;
-    private nameSignup;
-    private lastNameSignup;
-    private emailSignup;
-    private passwordsignup;
+    private signupChatBtn: HTMLButtonElement;
+    private accoutnLogin: HTMLButtonElement;
+    private googleLogin: HTMLButtonElement;
+    private nameSignup: HTMLInputElement;
+    private lastNameSignup: HTMLInputElement;
+    private emailSignup: HTMLInputElement;
+    private passwordsignup: HTMLInputElement;
 
     constructor(app: MyApp) {
         super("signup", app);
-        this.signupChatBtn = document.getElementById("signupChatBtn") as HTMLElement;
-        this.accoutnLogin = document.getElementById("accountLogin") as HTMLElement;
-        this.googleLogin = document.getElementById('googleSignup') as HTMLElement;
+        this.signupChatBtn = document.getElementById("signupChatBtn") as HTMLButtonElement;
+        this.accoutnLogin = document.getElementById("accountLogin") as HTMLButtonElement;
+        this.googleLogin = document.getElementById('googleSignup') as HTMLButtonElement;
         this.nameSignup = document.getElementById('nameSignup') as HTMLInputElement;
         this.lastNameSignup = document.getElementById('lastNameSignup') as HTMLInputElement;
         this.emailSignup = document.getElementById('emailSignup') as HTMLInputElement;

@@ -5,6 +5,7 @@ import { EditableText } from './Components';
 import { TodoList } from './Components';
 
 import { FireBase } from "./lib/Firebase";
+import { LoginSignupScherm } from "./lib/LoginSignupScherm";
 import { LoginScherm } from "./lib/LoginScherm";
 import { SignupScherm } from "./lib/SignupScherm";
 import { LogoutScherm } from "./lib/LogoutScherm";
@@ -16,14 +17,28 @@ export class MyApp {
   public card!: Card;
   public comment! : Comment;
   public editableText! : EditableText;
-  public firebase! : FireBase;
-  public loginScherm! : LoginScherm;
-  public siginScherm! : SignupScherm;
-  public logoutScherm! : LogoutScherm;
+  public firebase : FireBase;
+  public loginSignupScherm : LoginSignupScherm;
+  public loginScherm : LoginScherm;
+  public signupScherm : SignupScherm;
+  public logoutScherm : LogoutScherm;
 
   constructor() {
+    // this.card = new Card(this);
+    // this.comment = new Comment(this);
+    // this.editableText = new EditableText(this);
+    this.firebase = new FireBase();
+    this.loginScherm = new LoginScherm(this);
+    this.signupScherm = new SignupScherm(this);
+    this.logoutScherm = new LogoutScherm();
+    this.loginSignupScherm = new LoginSignupScherm(this);
 
+    this.loginSignupScherm.init();
+    this.loginScherm.init();
+    this.signupScherm.init();
+    // this.logoutScherm.init();
   }
+
 }
 
 const addTodoListInput = document.getElementById('addTodoListInput') as HTMLInputElement;

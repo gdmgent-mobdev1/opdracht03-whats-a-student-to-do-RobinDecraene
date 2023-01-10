@@ -2,13 +2,13 @@ import { MyApp } from "../app";
 import { Scherm } from "./scherm";
 
 export class LoginSignupScherm extends Scherm {
-    private login: HTMLElement;
-    private signup: HTMLElement;
+    private login: HTMLButtonElement;
+    private signup: HTMLButtonElement;
 
     constructor(app: MyApp) {
         super("login-signup", app);
-        this.login = document.getElementById("loginBtn") as HTMLElement;
-        this.signup = document.getElementById("signupBtn") as HTMLElement;
+        this.login = document.getElementById("loginBtn") as HTMLButtonElement;
+        this.signup = document.getElementById("signupBtn") as HTMLButtonElement;
     }
 
     public init(){
@@ -20,7 +20,7 @@ export class LoginSignupScherm extends Scherm {
         
         this.signup.onclick = () => {
             this.hide();
-            this.app.siginScherm.show();
+            this.app.signupScherm.show();
         }
     }
     

@@ -22,12 +22,20 @@
   border: .0625rem solid var(--Purple);
  }
 
- .premiereBtn, .secondaireBtn:active {
+ .premiereBtn:active {
   transform: translateY(4px);
   padding: 0.5rem;
   padding-left: 2.4rem;
   padding-right: 2.4rem;
 }
+
+.secondaireBtn:active {
+  transform: translateY(4px);
+  padding: 0.5rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
 
 .tertaireBtn {
   color: var(--Purple);
