@@ -1,6 +1,7 @@
 import { MyApp } from "../app";
 import { FireBase } from "./firebase";
 import { Scherm } from "./scherm";
+import { HomeScherm } from "./homeScherm";
 
 export class LoginScherm extends Scherm {
     private loginChatBtn: HTMLButtonElement;
@@ -39,7 +40,7 @@ export class LoginScherm extends Scherm {
             FireBase.get().signinPopup(() => {
 
                 this.hide();
-                // this.app.chatScherm.show();
+                this.app.homeScherm.show();
             });
         }  
     }

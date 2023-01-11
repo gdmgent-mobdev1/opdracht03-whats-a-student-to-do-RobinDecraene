@@ -8,7 +8,8 @@ import { FireBase } from "./lib/Firebase";
 import { LoginSignupScherm } from "./lib/LoginSignupScherm";
 import { LoginScherm } from "./lib/LoginScherm";
 import { SignupScherm } from "./lib/SignupScherm";
-import { LogoutScherm } from "./lib/LogoutScherm";
+import { AccountScherm } from './lib/accountScherm'; 
+import { HomeScherm } from './lib/homeScherm';
 // import { root } from './lib';
 // import localstorage from './Lib/localStorage';
 // -------------main------------
@@ -21,7 +22,8 @@ export class MyApp {
   public loginSignupScherm : LoginSignupScherm;
   public loginScherm : LoginScherm;
   public signupScherm : SignupScherm;
-  public logoutScherm : LogoutScherm;
+  public accountScherm : AccountScherm;
+  public homeScherm : HomeScherm;
 
   constructor() {
     // this.card = new Card(this);
@@ -30,13 +32,15 @@ export class MyApp {
     this.firebase = new FireBase();
     this.loginScherm = new LoginScherm(this);
     this.signupScherm = new SignupScherm(this);
-    this.logoutScherm = new LogoutScherm();
+    this.accountScherm = new AccountScherm(this);
     this.loginSignupScherm = new LoginSignupScherm(this);
+    this.homeScherm = new HomeScherm(this);
 
     this.loginSignupScherm.init();
     this.loginScherm.init();
     this.signupScherm.init();
-    // this.logoutScherm.init();
+    this.accountScherm.init();
+    this.homeScherm.init();
   }
 
 }
@@ -50,3 +54,11 @@ addTodoListButton.addEventListener('click', () => {
     addTodoListInput.value = '';
   }
 });
+
+const app = () =>
+{
+  new MyApp();
+  
+};
+
+app();
