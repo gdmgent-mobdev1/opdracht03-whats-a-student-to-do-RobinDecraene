@@ -3,7 +3,14 @@
  flex-direction: column;
 }
 
+input {
+  border-color: var(--Purple);
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
 /* Gekregen css */
-/* .commentsInput {
+.commentsInput {
   margin-right: 0.5em;
-} */
+}
