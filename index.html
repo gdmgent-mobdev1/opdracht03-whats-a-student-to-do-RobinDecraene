@@ -12,7 +12,7 @@
 <body>
   <div id="app">
     <!-- login-sign up scherm -->
-    <div id="login-signup" class="verstopt">
+    <div id="login-signup">
       <div class="logo">
         <img src="./src/img/notepad.png" alt="">
         <h1>Notes</h1>
@@ -79,7 +79,7 @@
     </div>
 
     <!-- home scherm -->
-    <div id="homeScherm" >
+    <div id="homeScherm" class="verstopt">
       <h2>Projects</h2>
       <div class="projects">
         <div class="projectCard">
@@ -119,10 +119,13 @@
 
     <!-- todo scherm -->
     <div id="projectDetailsScherm" class="verstopt">
-      <div>
-        <h1>naam project</h1>
-        <p>timer</p>
-        <button>start timer</button>
+      <div class="headerProject">
+        <h2>naam project</h2>
+        <div>
+          <p>timer</p>
+          <button class="premiereBtn">start timer</button>
+        </div>
+
       </div>
       <input type="text" id="addTodoListInput" class="comment">
       <button id="addTodoListButton" class="btn-save">Add list</button>
@@ -132,8 +135,6 @@
         <h3>Leden</h3>
         <p>naam</p>
         <p>naam</p>
-
-
       </div>
     </div>
 
@@ -155,7 +156,6 @@
 
       <button id="logoutBtn" class="secondaireBtn">Log out</button>
     </div>
-
 
   </div>
   <script type="module" src="./src/app.ts"></script>
