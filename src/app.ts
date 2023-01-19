@@ -37,14 +37,14 @@ export class MyApp {
     this.accountScherm = new AccountScherm(this);
     this.loginSignupScherm = new LoginSignupScherm(this);
     this.homeScherm = new HomeScherm(this);
-    // this.projectDetailScherm = new ProjectDetailScherm(this);
+    this.projectDetailScherm = new ProjectDetailScherm(this);
 
     this.loginSignupScherm.init();
     this.loginScherm.init();
     this.signupScherm.init();
     this.accountScherm.init();
     this.homeScherm.init();
-    // this.projectDetailScherm.init();
+    this.projectDetailScherm.init();
   }
 
 }
