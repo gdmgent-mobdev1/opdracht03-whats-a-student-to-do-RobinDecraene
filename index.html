@@ -12,12 +12,11 @@
 <body>
   <div id="app">
     <!-- login-sign up scherm -->
-    <div id="login-signup">
+    <div id="login-signup" class="verstopt">
       <div class="logo">
         <img src="./src/img/notepad.png" alt="">
         <h1>Notes</h1>
       </div>
-
 
       <button id="loginBtn" class="premiereBtn">Log in</button>
       <button id="signupBtn" class="premiereBtn">Sign up</button>
@@ -25,7 +24,10 @@
 
     <!-- login scherm -->
     <div id="login" class="verstopt">
-      <h1>Notes</h1>
+      <div class="logo">
+        <img src="./src/img/notepad.png" alt="">
+        <h1>Notes</h1>
+      </div>
       <div class="inputveld">
         <label>email</label>
         <input id="emailLogin" type="email">
@@ -36,7 +38,7 @@
         <input id="passwordLogin" type="password">
       </div>
 
-      <p>or</p>
+      <p class="or">or</p>
       <button id="googleLogin" class="secondaireBtn">Via Google</button>
       <button id="loginChatBtn" class="premiereBtn">log in</button>
       <div class="noAccount">
@@ -48,7 +50,10 @@
 
     <!-- sign up scherm -->
     <div id="signup" class="verstopt">
-      <h1>Notes</h1>
+      <div class="logo">
+        <img src="./src/img/notepad.png" alt="">
+        <h1>Notes</h1>
+      </div>
       <div class="inputveld">
         <label>Name</label>
         <input id="nameSignup" type="text">
@@ -69,7 +74,7 @@
         <input id="passwordsignup" type="password">
       </div>
 
-      <p>or</p>
+      <p class="or">or</p>
       <button id="googleSignup" class="secondaireBtn">Via Google</button>
       <button id="signupChatBtn" class="premiereBtn">Sign up</button>
       <div class="allreadyAccount">
@@ -79,8 +84,12 @@
     </div>
 
     <!-- home scherm -->
-    <div id="homeScherm" class="verstopt">
-      <h2>Projects</h2>
+    <div id="homeScherm" >
+      <nav>
+        <h2>Projects</h2>
+        <img class="accountImg" src="/src/img/icon-small.png" alt="">
+      </nav>
+      
       <div class="projects">
         <div class="projectCard">
           <img src="./src/img/project.jpg" alt="">
@@ -120,6 +129,7 @@
     <!-- todo scherm -->
     <div id="projectDetailsScherm" class="verstopt">
       <div class="headerProject">
+        <img src="/src/img/arrow.png" alt="">
         <h2>naam project</h2>
         <div>
           <p>timer</p>
@@ -141,6 +151,7 @@
     <!-- account scherm -->
     <div id="account" class="verstopt">
       <nav>
+        <img class="arrowAccount" src="/src/img/arrow.png" alt="">
         <div class="accountTitle">
           <h2>My account</h2>
         </div>

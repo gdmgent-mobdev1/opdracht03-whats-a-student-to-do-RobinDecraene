@@ -31,7 +31,7 @@ export class SignupScherm extends Scherm {
             const achternaam = this.lastNameSignup.value;
             FireBase.get().signupEmailPasswoord(email, pswd, naam, achternaam, () => {
                 this.hide();
-                // this.app.chatScherm.show();
+                this.app.homeScherm.show();
                 this.emailSignup.innerHTML = '';
             });
         }
@@ -45,7 +45,7 @@ export class SignupScherm extends Scherm {
             FireBase.get().signinPopup(() => {
 
                 this.hide();
-                // this.app.chatScherm.show();
+                this.app.homeScherm.show();
             });
         }        
     }

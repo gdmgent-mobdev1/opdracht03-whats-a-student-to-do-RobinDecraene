@@ -27,7 +27,7 @@ export class LoginScherm extends Scherm {
             const pswd = this.passwordLogin.value;
             FireBase.get().signinEmailPasswoord(email, pswd, () => {
                 this.hide();
-                // this.app.chatScherm.show();
+                this.app.homeScherm.show();
             });
         }
 

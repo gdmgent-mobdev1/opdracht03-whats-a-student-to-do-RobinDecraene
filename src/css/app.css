@@ -49,6 +49,18 @@ html, body {
 
 /* home scherm */
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 92%;
+}
+
+nav img {
+  width: 3rem;
+  height: 3rem;
+}
+
 .projects {
   display: flex;
   flex-direction: row;

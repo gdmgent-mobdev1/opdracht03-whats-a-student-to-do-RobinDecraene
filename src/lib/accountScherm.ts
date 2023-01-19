@@ -3,12 +3,12 @@ import { FireBase } from "./firebase";
 import { Scherm } from "./scherm";
 
 export class AccountScherm extends Scherm{
-    private arrow: HTMLElement;
+    private arrow: HTMLImageElement;
     private logoutBtn: HTMLButtonElement;
 
     constructor(app: MyApp) {
         super("account", app);
-        this.arrow = document.getElementById("arrowAccount") as HTMLElement;
+        this.arrow = document.getElementById("arrowAccount") as HTMLImageElement;
         this.logoutBtn = document.getElementById("logoutBtn") as HTMLButtonElement;
     }
 
