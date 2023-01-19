@@ -87,11 +87,11 @@
     <div id="homeScherm" >
       <nav>
         <h2>Projects</h2>
-        <img class="accountImg" src="/src/img/icon-small.png" alt="">
+        <img id="accountImg" src="/src/img/icon-small.png" alt="">
       </nav>
       
       <div class="projects">
-        <div class="projectCard">
+        <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
             <h3>Naam project</h3>
@@ -99,7 +99,7 @@
           </div>
         </div>
 
-        <div class="projectCard">
+        <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
             <h3>Naam project</h3>
@@ -107,7 +107,7 @@
           </div>
         </div>
 
-        <div class="projectCard">
+        <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
             <h3>Naam project</h3>
@@ -115,7 +115,7 @@
           </div>
         </div>
 
-        <div class="projectCard">
+        <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
             <h3>Naam project</h3>
@@ -127,20 +127,19 @@
     </div>
 
     <!-- todo scherm -->
-    <div id="projectDetailsScherm" class="verstopt">
-      <div class="headerProject">
-        <img src="/src/img/arrow.png" alt="">
+    <div id="projectDetailsScherm" class="verstopt margin">
+      <nav class="headerProject">
+        <img id="arrowTodo" src="/src/img/arrow.png" alt="">
         <h2>naam project</h2>
         <div>
           <p>timer</p>
           <button class="premiereBtn">start timer</button>
         </div>
 
-      </div>
+      </nav>
       <input type="text" id="addTodoListInput" class="comment">
       <button id="addTodoListButton" class="btn-save">Add list</button>
       
-
       <div class="sidebar">
         <h3>Leden</h3>
         <p>naam</p>
@@ -151,10 +150,8 @@
     <!-- account scherm -->
     <div id="account" class="verstopt">
       <nav>
-        <img class="arrowAccount" src="/src/img/arrow.png" alt="">
-        <div class="accountTitle">
-          <h2>My account</h2>
-        </div>
+        <img id="arrowAccount" src="/src/img/arrow.png" alt="">
+        <h2>My account</h2>
       </nav>
       <h3 id="logged-in-user-name">Naam</h3>
       <div class="info">

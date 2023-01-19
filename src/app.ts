@@ -10,6 +10,7 @@ import { LoginScherm } from "./lib/LoginScherm";
 import { SignupScherm } from "./lib/SignupScherm";
 import { AccountScherm } from './lib/accountScherm'; 
 import { HomeScherm } from './lib/homeScherm';
+import { ProjectDetailScherm } from './lib/projectDetailsScherm';
 // import { root } from './lib';
 // import localstorage from './Lib/localStorage';
 // -------------main------------
@@ -24,6 +25,7 @@ export class MyApp {
   public signupScherm : SignupScherm;
   public accountScherm : AccountScherm;
   public homeScherm : HomeScherm;
+  public projectDetailScherm! : ProjectDetailScherm;
 
   constructor() {
     // this.card = new Card(this);
@@ -35,12 +37,14 @@ export class MyApp {
     this.accountScherm = new AccountScherm(this);
     this.loginSignupScherm = new LoginSignupScherm(this);
     this.homeScherm = new HomeScherm(this);
+    // this.projectDetailScherm = new ProjectDetailScherm(this);
 
     this.loginSignupScherm.init();
     this.loginScherm.init();
     this.signupScherm.init();
     this.accountScherm.init();
     this.homeScherm.init();
+    // this.projectDetailScherm.init();
   }
 
 }
