@@ -59,9 +59,9 @@ nav {
   margin-bottom: 2rem;
 }
 
-nav img {
-  width: 3rem;
-  height: 3rem;
+.imgNav img {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 #arrowAccount {
@@ -135,6 +135,28 @@ nav img {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+/* new project */
+#newProject nav {
+  margin-top: 1rem;
+}
+
+#newProject nav img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.newProject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  justify-content: center;
+}
+
+.newProject .inputveld {
+  width: 60%;
 }
 
 /* gekregen css */

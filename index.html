@@ -87,14 +87,18 @@
     <div id="homeScherm" >
       <nav>
         <h2>Projects</h2>
-        <img id="accountImg" src="/src/img/icon-small.png" alt="">
+        <div class="imgNav">
+          <img id="add" src="/src/img/plus.png" alt="">
+          <img id="accountImg" src="/src/img/icon-small.png" alt="">
+        </div>
+
       </nav>
-      
+
       <div class="projects">
         <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
-            <h3>Naam project</h3>
+            <h3>Project mob dev</h3>
             <p>Beschrijving ofzo</p>
           </div>
         </div>
@@ -102,7 +106,7 @@
         <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
-            <h3>Naam project</h3>
+            <h3>Taak UX</h3>
             <p>Beschrijving ofzo</p>
           </div>
         </div>
@@ -110,7 +114,7 @@
         <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
-            <h3>Naam project</h3>
+            <h3>Powerpoint PPD</h3>
             <p>Beschrijving ofzo</p>
           </div>
         </div>
@@ -118,28 +122,55 @@
         <div id="projectCard">
           <img src="./src/img/project.jpg" alt="">
           <div>
-            <h3>Naam project</h3>
+            <h3>Taak web dev</h3>
             <p>Beschrijving ofzo</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- new project -->
+    <div id="newProject" class="verstopt">
+      <nav>
+        <img id="arrowNewProject" src="/src/img/arrow.png" alt="">
+        <h2>New project</h2>
+      </nav>
+      <div class="newProject">
+        <div class="inputveld">
+          <label>Name Project</label>
+          <input id="nameProject" type="text">
+        </div>
+
+        <div class="inputveld">
+          <label>Description</label>
+          <input id="descriptionProject" type="text">
+        </div>
+
+        <div class="inputveld">
+          <label>Add group members</label>
+          <input id="groupMembers" type="text">
+        </div>
+
+        <button id="btnNewProject" class="premiereBtn">Create project</button>
+      </div>
+
 
     </div>
 
+
     <!-- todo scherm -->
     <div id="projectDetailsScherm" class="verstopt">
-      <nav class="headerProject">
+      <nav>
         <img id="arrowTodo" src="/src/img/arrow.png" alt="">
         <h2>naam project</h2>
         <div>
           <p id="timer">timer</p>
           <button class="premiereBtn">start timer</button>
         </div>
-
       </nav>
       <input type="text" id="addTodoListInput" class="comment">
       <button id="addTodoListButton" class="btn-save">Add list</button>
-      
+
       <div class="sidebar">
         <h3>Leden</h3>
         <p>naam</p>

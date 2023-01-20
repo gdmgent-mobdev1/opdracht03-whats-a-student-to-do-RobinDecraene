@@ -10,7 +10,8 @@ import { LoginScherm } from "./lib/LoginScherm";
 import { SignupScherm } from "./lib/SignupScherm";
 import { AccountScherm } from './lib/accountScherm'; 
 import { HomeScherm } from './lib/homeScherm';
-import { ProjectDetailScherm } from './lib/projectDetailsScherm';
+import { ProjectDetailScherm } from './lib/projectDetailScherm';
+import { NewProject } from './lib/newProject';
 // import { root } from './lib';
 // import localstorage from './Lib/localStorage';
 // -------------main------------
@@ -25,7 +26,8 @@ export class MyApp {
   public signupScherm : SignupScherm;
   public accountScherm : AccountScherm;
   public homeScherm : HomeScherm;
-  public projectDetailScherm! : ProjectDetailScherm;
+  public projectDetailScherm : ProjectDetailScherm;
+  public newProject : NewProject;
 
   constructor() {
     // this.card = new Card(this);
@@ -38,6 +40,7 @@ export class MyApp {
     this.loginSignupScherm = new LoginSignupScherm(this);
     this.homeScherm = new HomeScherm(this);
     this.projectDetailScherm = new ProjectDetailScherm(this);
+    this.newProject = new NewProject(this);
 
     this.loginSignupScherm.init();
     this.loginScherm.init();
@@ -45,6 +48,7 @@ export class MyApp {
     this.accountScherm.init();
     this.homeScherm.init();
     this.projectDetailScherm.init();
+    this.newProject.init();
   }
 
 }
