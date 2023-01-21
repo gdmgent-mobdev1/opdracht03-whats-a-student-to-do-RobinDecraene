@@ -4,25 +4,21 @@ import Card from './Card';
 
 export default class TodoList {
   place: HTMLElement;
-
   title: string;
-
   cardArray: Card[];
-
   input?: HTMLInputElement ;
-
   div?: HTMLDivElement ;
-
   h2?: HTMLHeadingElement ;
-
   button?: HTMLButtonElement ;
-
   todoListElement?: string | HTMLElement ;
+  public cardsToDo : HTMLElement;
 
   constructor(place: HTMLElement, title = 'to-do list') {
     this.place = place;
     this.title = title;
     this.cardArray = [];
+    this.cardsToDo = document.getElementById("cardsTodo") as HTMLElement;
+
 
     this.render();
   }
@@ -58,7 +54,7 @@ export default class TodoList {
     this.button.id = 'to-do-list-button';
     this.div = document.createElement('div');
     this.todoListElement = document.createElement('div');
-
+    
     // Add Event listener
     this.button.addEventListener('click', () => {
       if ((this.input !== null) && this.input?.value !== '') {
@@ -73,5 +69,7 @@ export default class TodoList {
     this.todoListElement.append(this.button);
     this.todoListElement.append(this.div);
     this.todoListElement.classList.add('todoList');
+    this.cardsToDo.append(this.todoListElement);
+
   }
 }

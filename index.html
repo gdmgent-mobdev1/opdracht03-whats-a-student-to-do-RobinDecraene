@@ -84,7 +84,7 @@
     </div>
 
     <!-- home scherm -->
-    <div id="homeScherm" class="verstopt">
+    <div id="homeScherm">
       <nav>
         <h2>Projects</h2>
         <div class="imgNav">
@@ -159,20 +159,23 @@
 
 
     <!-- todo scherm -->
-    <div id="projectDetailsScherm" >
+    <div id="projectDetailsScherm" class="verstopt">
       <nav class="navToDo">
-        <div>
+        <div class="textToDo">
           <img id="arrowTodo" src="/src/img/arrow.png" alt="">
           <h2>naam project</h2>
         </div>
 
-        <div>
-          <p id="timer">timer</p>
-          <button class="premiereBtn">start timer</button>
+        <div class="timer">
+         <p id="timer">00:00:00</p>
+          <button id="timerBtn" class="premiereBtn">start timer</button>
         </div>
       </nav>
-      <input type="text" id="addTodoListInput" class="comment">
-      <button id="addTodoListButton" class="btn-save">Add list</button>
+      <div id="cardsTodo">
+        <input type="text" id="addTodoListInput" class="comment">
+        <button id="addTodoListButton" class="btn-save">Add list</button>
+      </div>
+      
 
       <div class="sidebar">
         <h3>Leden</h3>

@@ -9,8 +9,6 @@ html, body {
   height: 100vh;
   padding: 0;
   margin: 0;
- 
-
 }
 
 html {
@@ -142,12 +140,20 @@ nav {
   justify-content: center;
 }
 
-.navToDo div {
+.textToDo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12rem;
+  margin-top: 1rem;
 }
 
 #arrowTodo {

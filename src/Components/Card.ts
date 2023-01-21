@@ -23,6 +23,7 @@ export default class Card {
   editableDescription?: EditableText ;
   editableTitle?: EditableText;
   id: string;
+  
 
   constructor(text: string, place: HTMLElement, todoList: TodoList) {
     this.id = uuidv4();
@@ -62,6 +63,7 @@ export default class Card {
     this.card.append(this.deleteButton);
 
     this.place.append(this.card);
+    
   }
 
   deleteCard(): void {

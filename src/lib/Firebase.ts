@@ -166,7 +166,6 @@ export class FireBase {
 
   }
 
-
   public deleteTodoListFirebase = async (id: string) => {
     await deleteDoc(doc(this.fireStoreDb, "lists", id));
   }
