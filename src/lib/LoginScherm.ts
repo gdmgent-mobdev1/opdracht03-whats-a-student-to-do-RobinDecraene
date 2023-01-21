@@ -1,7 +1,7 @@
 import { MyApp } from "../app";
 import { FireBase } from "./firebase";
 import { Scherm } from "./scherm";
-import { HomeScherm } from "./homeScherm";
+import { HomeScherm } from "./HomeScherm";
 
 export class LoginScherm extends Scherm {
     private loginChatBtn: HTMLButtonElement;

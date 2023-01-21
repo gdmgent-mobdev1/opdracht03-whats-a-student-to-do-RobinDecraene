@@ -8,10 +8,10 @@ import { FireBase } from "./lib/Firebase";
 import { LoginSignupScherm } from "./lib/LoginSignupScherm";
 import { LoginScherm } from "./lib/LoginScherm";
 import { SignupScherm } from "./lib/SignupScherm";
-import { AccountScherm } from './lib/accountScherm'; 
-import { HomeScherm } from './lib/homeScherm';
-import { ProjectDetailScherm } from './lib/projectDetailScherm';
-import { NewProject } from './lib/newProject';
+import { AccountScherm } from './lib/AccountScherm'; 
+import { HomeScherm } from './lib/HomeScherm';
+import { ProjectDetailScherm } from './lib/ProjectDetailScherm';
+import { NewProject } from './lib/NewProject';
 // import { root } from './lib';
 // import localstorage from './Lib/localStorage';
 // -------------main------------
