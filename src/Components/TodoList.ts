@@ -1,4 +1,6 @@
 import { dragoverHandler, dropHandler } from '../Lib/dragAndDrop';
+import { FireBase } from '../lib/Firebase';
+import { ProjectDetailScherm } from '../lib/ProjectDetailScherm';
 // eslint-disable-next-line import/no-cycle
 import Card from './Card';
 
@@ -11,22 +13,21 @@ export default class TodoList {
   h2?: HTMLHeadingElement ;
   button?: HTMLButtonElement ;
   todoListElement?: string | HTMLElement ;
-  public cardsToDo : HTMLElement;
+  public list : HTMLElement;
 
-  constructor(place: HTMLElement, title = 'to-do list') {
+  constructor(place: HTMLElement, title = 'to-do list', private  firebase: FireBase, private project: ProjectDetailScherm) {
+    this.cardArray = [];
+    this.list = document.getElementById("list") as HTMLElement;
     this.place = place;
     this.title = title;
-    this.cardArray = [];
-    this.cardsToDo = document.getElementById("cardsTodo") as HTMLElement;
-
-
     this.render();
   }
 
-  addToDo(): void {
-    if (this.input instanceof HTMLInputElement && this.div instanceof HTMLDivElement) {
+  async addToDo(): Promise<void> {
+    if (this.input instanceof HTMLInputElement && this.list instanceof HTMLElement) {
       const text = this.input.value;
-      this.cardArray.push(new Card(text, this.div, this));
+      const cardId = this.firebase.addCard(text, this.project.name, this.title);
+      this.cardArray.push(new Card(text, this.list, this));
     }
   }
 
@@ -69,7 +70,7 @@ export default class TodoList {
     this.todoListElement.append(this.button);
     this.todoListElement.append(this.div);
     this.todoListElement.classList.add('todoList');
-    this.cardsToDo.append(this.todoListElement);
+    this.list.append(this.todoListElement);
 
   }
 }

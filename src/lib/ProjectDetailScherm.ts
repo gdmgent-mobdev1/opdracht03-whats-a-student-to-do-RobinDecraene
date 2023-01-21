@@ -1,6 +1,7 @@
 import { MyApp } from "../app";
 import { Scherm } from "./scherm";
 import { FireBase } from "./Firebase";
+import { TodoList } from "../Components";
 
 export class ProjectDetailScherm extends Scherm {
     private arrowTodo : HTMLImageElement;
@@ -11,8 +12,9 @@ export class ProjectDetailScherm extends Scherm {
     // private timer;
     // private totaltime;
     // private timerId : HTMLElement;
-    private name!: string;
-    private nameProject : HTMLElement;
+    public name!: string;
+    private lists: any[];
+    private listId : HTMLElement
 
     constructor(app: MyApp){
       super("projectDetailsScherm", app);
@@ -24,7 +26,13 @@ export class ProjectDetailScherm extends Scherm {
       // this.minutes = Math.floor((this.totaltime - this.hour*3600)/60);
       // this.seconds = this.totaltime - (this.hour*3600 + this.minutes*60);
       // this.timerId = document.getElementById("timerId") as HTMLElement;
-      this.nameProject = document.getElementById("nameProject") as HTMLElement;
+      
+      this.listId = document.getElementById("list") as HTMLElement;
+      this.lists = [
+        new TodoList(this.listId, 'To do', this.app.firebase, this),
+        new TodoList(this.listId, 'Started', this.app.firebase, this),
+        new TodoList(this.listId, 'Done', this.app.firebase, this),
+        ]
     }
 
   public init(){
@@ -38,15 +46,17 @@ export class ProjectDetailScherm extends Scherm {
     // }
   }
 
-  public open(room: string) {
-    this.name = room;
+  public open(data: any) {
+    this.name = data.name;
+
+    // const cards = this.app.firebase.getCards(data.name);
     this.show();
 }
 
 public show() {
-  this.nameProject.innerHTML = this.name;
-  const test = document.createElement('h3');
-  test.innerHTML = 'hallo';
+  const nameProject = document.getElementById("nameProject") as HTMLElement;
+  nameProject.innerHTML = this.name;
+  super.show();
 }
 }
 

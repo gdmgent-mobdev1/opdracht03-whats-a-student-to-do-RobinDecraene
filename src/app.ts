@@ -30,9 +30,6 @@ export class MyApp {
   public newProject : NewProject;
 
   constructor() {
-    // this.card = new Card(this);
-    // this.comment = new Comment(this);
-    // this.editableText = new EditableText(this);
     this.firebase = new FireBase();
     this.loginScherm = new LoginScherm(this);
     this.signupScherm = new SignupScherm(this);
@@ -58,7 +55,7 @@ const addTodoListButton = document.getElementById('addTodoListButton') as HTMLEl
 
 addTodoListButton.addEventListener('click', () => {
   if (addTodoListInput.value.trim() !== '') {
-    new TodoList(document.getElementById('app') as HTMLElement, addTodoListInput.value);
+    new TodoList(document.getElementById('app') as HTMLElement, addTodoListInput.value, new FireBase(), new ProjectDetailScherm(new MyApp()));
     addTodoListInput.value = '';
   }
 });

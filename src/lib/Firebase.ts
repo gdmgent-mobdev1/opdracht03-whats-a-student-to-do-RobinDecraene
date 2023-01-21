@@ -10,9 +10,14 @@ import {
   collection,
   addDoc,
   setDoc,
-  Firestore
+  Firestore,
+  query,
+  where,
+  getDocs,
+  DocumentData
 } from "firebase/firestore";
-import { Auth,
+import {
+  Auth,
   getAuth,
   updateProfile,
   signInWithEmailAndPassword,
@@ -21,7 +26,8 @@ import { Auth,
   GoogleAuthProvider,
   User,
   Unsubscribe,
-  signOut } from "firebase/auth";
+  signOut
+} from "firebase/auth";
 
 import {
   getDatabase,
@@ -100,15 +106,15 @@ export class FireBase {
     signInWithPopup(this.auth, this.provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential?.accessToken;
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential ?.accessToken;
         // The signed-in user info.
         this.user = result.user;
         cb();
         // ...
       }).catch((error) => {
         // Handle Errors here.
-          console.log(error);
+        console.log(error);
         // The email of the user's account used.
         const email = error.customData.email;
         // The AuthCredential type that was used.
@@ -134,6 +140,36 @@ export class FireBase {
   }
 
   // get data from firestore
+  public addCard = async (title: string, project: string, list: string) => {
+    const cardsSnapShot = collection(this.fireStoreDb, 'cards');
+
+    const docRef = await addDoc(cardsSnapShot, {
+      title,
+      project,
+      list,
+      description: '',
+      comments: []
+    });
+    return docRef.id;
+  }
+
+  public getCards = async (project: string) => {
+    const q = query(collection(this.fireStoreDb, "cards"), where("project", "==", project));
+
+    const querySnapshot = await getDocs(q);
+    const result: {
+      id: string;data: DocumentData;
+    } [] = [];
+    querySnapshot.forEach((doc) => {
+      result.push({
+        id: doc.id,
+        data: doc.data()
+      })
+    });
+    return result;
+
+  }
+
   public addTodoFirebase = async (text: string, todoId: string) => {
     const cardsSnapShot = collection(this.fireStoreDb, `lists/${todoId}/cards`);
 
@@ -153,7 +189,7 @@ export class FireBase {
       }, {
         merge: true
       });
-      
+
       console.log(answer);
     } else {
       const answer = await setDoc(doc(this.fireStoreDb, `lists/${todoListId}/cards`, id), {

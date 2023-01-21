@@ -1,6 +1,13 @@
 import { MyApp } from "../app";
 import { Scherm } from "./scherm";
 
+const projects = [
+  { name: 'Project mob dev', description: 'Examen taak' },
+  { name: 'Taak UX', description: 'Eindtaak' },
+  { name: 'Powerpoint PPD', description: 'Laatste powerpoint' },
+  { name: 'Taak web dev', description: 'Eindtaak' }
+]
+
 export class HomeScherm extends Scherm {
   private addTodoListInput : HTMLInputElement;
   private addTodoListButton : HTMLButtonElement;
@@ -8,9 +15,6 @@ export class HomeScherm extends Scherm {
   // private projectCard : HTMLElement;
   private add : HTMLImageElement;
   private projects : HTMLElement;
-  public projectRooms = [
-    'Project mob dev', 'Taak UX', 'Powerpoint PPD', 'Taak web dev'
-  ]
 
   constructor(app: MyApp) {
     super("homeScherm", app);
@@ -22,20 +26,22 @@ export class HomeScherm extends Scherm {
     this.projects = document.getElementById("projects") as HTMLElement;
   }
 
-  private createProject(name: string) : HTMLElement {
+  private createProject(data: any) : HTMLElement {
     const projectRoom = document.createElement('div');
     projectRoom.setAttribute('id', 'projectCard');
     const img = document.createElement('img');
     img.src = "./src/img/project.jpg";
     const div = document.createElement('div');
     const title = document.createElement('h3');
-    title.innerHTML = name;
+    const beschrijving = document.createElement('p');
+    title.innerHTML = data.name;
+    beschrijving.innerHTML = data.description;
 
-    div.append(title);
+    div.append(title, beschrijving);
     projectRoom.append(img, div);
     projectRoom.onclick = () => {
       this.hide();
-      this.app.projectDetailScherm.open(name);
+      this.app.projectDetailScherm.open(data);
     }
     return projectRoom;
   }
@@ -52,8 +58,8 @@ export class HomeScherm extends Scherm {
       this.app.accountScherm.show();
     }
 
-    this.projectRooms.forEach(room => {
-      const element = this.createProject(room);
+    projects.forEach(project => {
+      const element = this.createProject(project);
       this.projects.append(element);
     })
   }
